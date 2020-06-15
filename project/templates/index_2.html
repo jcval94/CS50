@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+        <form action="/index_2" method="post">
+            <!-- <meta http-equiv="refresh" content="0.4" > -->
+            <div>
+                <h1>
+                    Game of Life
+                </h1>
+            </div>
+            <input type="number" min="1" max="10" id="search_form_input" name="density" placeholder="Density" class="form-control"></input>
+            <button class="btn btn-primary" name="submit_button_2" type="submit" value ="reset2">Set new Density</button>
+            <p>Type the new density, push teh button and go back to the home page</p>
+            <p>You can type a new number to see the next generation</p>
+            <div id="place_for_suggestions"></div>
+        </form>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+        $("#search_form_input").keyup(function(){
+            var text = $(this).val();
+            $.ajax({
+              url: "/suggestions",
+              type: "get",
+              data: {jsdata: text},
+              success: function(response) {
+                $("#place_for_suggestions").html(response);
+              },
+              error: function(xhr) {
+                //Do Something to handle error
+              }
+            });
+        });
+        </script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+        <form action="/" method="post">
+            <!-- <meta http-equiv="refresh" content="0.4" > -->
+            <div>
+                <h1>
+                    Game of Life Rules'
+                </h1>
+            </div>
+            <hr>
+            <br>
+            <div>
+                <ol type=”A”>
+                    <li>Any live cell with fewer than two live neighbours dies, as if by underpopulation..</li><br>
+                    <li>Any live cell with two or three live neighbours lives on to the next generation.</li><br>
+                    <li>Any live cell with more than three live neighbours dies, as if by overpopulation.</li><br>
+                    <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li><br>
+                <ol>
+            </div><br>
+
+            <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">More info</a>
+
+{% endblock %}

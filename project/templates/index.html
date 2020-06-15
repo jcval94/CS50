@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+        <form action="/" method="post">
+            <!-- <meta http-equiv="refresh" content="0.4" > -->
+            <div>
+                <h1>
+                    Game of Life
+                </h1>
+            </div>
+
+            <button class="btn btn-primary" name="submit_button" type="submit" value ="reset">Reset</button>
+            <button class="btn btn-primary" name="submit_button" type="submit" value ="gene">Next Gen</button>
+            <br>
+            <p>Push reset to start a new game</p>
+            <img src="/plot.png" alt="my plot">
+
+        </form>
+{% endblock %}
